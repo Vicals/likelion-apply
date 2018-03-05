@@ -27,7 +27,7 @@
         <% if @apply.a4 == "N" %>
           <td><%= @apply.a4 %></td>
         <% else %>
-          <td><%= link_to "Y", "#{@apply.a4}", style: "color: inherit;" %> / <%= link_to "지원서 저장", "/home/view/#{@apply.id}_#{@apply.name}.pdf", method: "POST", style: "color: inherit;", target: "_blank" %></td>
+          <td><%= link_to "Y", "#{@apply.a4}", style: "color: inherit;" %> / <%= link_to "지원서 저장", "/home/save_pdf/#{@apply.id}_#{@apply.name}.pdf", method: "POST", style: "color: inherit;" %></td>
         <% end %>
       </tr>
       <tr>

@@ -21,12 +21,6 @@ class HomeController < ApplicationController
     @apply = Apply.find(params[:id])
   end
 
-  def save_pdf
-    @apply = Apply.find(params[:id])
-    
-    send_data(disposition: 'inline')
-  end
-
   def users
     require 'rubygems'
     require 'mechanize'

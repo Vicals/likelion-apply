@@ -42,7 +42,7 @@
               <div style="color:red">N</div>
             </td>
           <% end %>
-          <td><%= link_to "저장", "/home/save_pdf/#{a.id}_#{a.name}.pdf", method: "POST", target: "_blank" %></td>
+          <td><%= link_to "저장", "/home/view/#{a.id}_#{a.name}.pdf", method: "POST", target: "_blank" %></td>
         </tr>
       <% end %>
     </tbody>
