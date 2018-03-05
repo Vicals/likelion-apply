@@ -1,0 +1,50 @@
+<div class="container">
+  <div style="text-align:right">
+    <div class="row" style="text-align:right">
+      <%= form_tag("/home/out", method: "post") do %>
+      <%= text_field_tag :univ, @apply.first.univ, class: "form-control", hidden: true %>
+      <div class="form-group">
+        <%= submit_tag "종료", class: "btn btn-danger" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">이름</th>
+      <th scope="col">이메일</th>
+      <th scope="col">전화번호</th>
+      <th scope="col">학과</th>
+      <th scope="col">학번 / 학년</th>
+      <th scope="col">첨부파일</th>
+      <th scope="col">PDF로 저장</th>
+    </tr>
+  </thead>
+
+    <tbody>
+      <% @apply.each_with_index.reverse_each do |a, index| %>
+        <tr>
+          <th scope="row"><%= index+1 %></th>
+          <td><%= link_to "#{a.name}", "/home/view/#{a.id}", method: "post", target: "_blank" %></td>
+          <td><%= a.email %></td>
+          <td><%= a.phone %></td>
+          <td><%= a.course %></td>
+          <td><%= a.grade %></td>
+          <% unless a.a4 == "N" %>
+            <td>
+              <%= link_to "Y", "#{a.a4}" %>
+            </td>
+          <% else %>
+            <td>
+              <div style="color:red">N</div>
+            </td>
+          <% end %>
+          <td><%= link_to "저장", "/home/save_pdf/#{a.id}_#{a.name}.pdf", method: "POST", target: "_blank" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

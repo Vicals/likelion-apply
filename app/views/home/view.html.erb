@@ -1,0 +1,56 @@
+<div class="container" style="margin-top:100px;">
+  <table class="table" id="line_items">
+    <thead>
+      <tr>
+        <th scope="col" colspan="4">
+          <h3 style="text-align:center"><%= @apply.title %></h3>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">이름</th>
+        <td><%= @apply.name%></td>
+        <th>이메일</td>
+        <td><%= @apply.email %></td>
+      </tr>
+      <tr>
+        <th scope="row">전화번호</th>
+        <td><%= @apply.phone%></td>
+        <th>학과(전공)</td>
+        <td><%= @apply.course %></td>
+      </tr>
+      <tr>
+        <th scope="row">입학년도 / 학년</th>
+        <td><%= @apply.grade %></td>
+        <th scope="row">PDF 파일첨부</th>
+        <% if @apply.a4 == "N" %>
+          <td><%= @apply.a4 %></td>
+        <% else %>
+          <td><%= link_to "Y", "#{@apply.a4}", style: "color: inherit;" %> / <%= link_to "지원서 저장", "/home/save_pdf/#{@apply.id}_#{@apply.name}.pdf", method: "POST", style: "color: inherit;" %></td>
+        <% end %>
+      </tr>
+      <tr>
+        <td colspan="4">
+          <h5>지원동기</h5><br><%= @apply.reason %></th>
+      </tr>
+      <tr>
+        <td colspan="4">
+          <h5>만들고 싶은 IT서비스</h5><br><%= @apply.service %></th>
+      </tr>
+      <tr>
+        <td colspan="4">
+          <h5><%= @apply.q1 %></h5><br><%= @apply.a1 %></th>
+      </tr>
+      <tr>
+        <td colspan="4">
+          <h5><%= @apply.q2 %></h5><br><%= @apply.a2 %></th>
+      </tr>
+      <tr>
+        <td colspan="4">
+          <h5><%= @apply.q3 %></h5><br><%= @apply.a3 %></th>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+</div>
