@@ -11,21 +11,21 @@
       <%= form_tag("/home/out", method: "post") do %>
         <%= text_field_tag :univ, @apply.univ, class: "form-control", hidden: true %>
         <div class="form-group">
-          <%= submit_tag "종료", class: "btn btn-light" %>
+          <%= submit_tag "종료", class: "btn btn-danger" %>
         </div>
       <% end %>
 
       <%= form_tag("/home/list", method: "post") do %>
           <%= text_field_tag :univ, @apply.univ, class: "form-control", hidden: true %>
         <div class="form-group">
-          <%= submit_tag "지원서", class: "btn btn-light", :formtarget => "_blank" %>
+          <%= submit_tag "지원서", class: "btn btn-light" %>
         </div>
       <% end %>
 
       <%= form_tag("/home/save_all", method: "post") do %>
           <%= text_field_tag :univ, @apply.univ, class: "form-control", hidden: true %>
         <div class="form-group">
-          <%= submit_tag "모두저장", class: "btn btn-light", :formtarget => "_blank" %>
+          <%= submit_tag "모두저장", class: "btn btn-light", :formtarget => "_blank", hidden: true %>
         </div>
       <% end %>
 

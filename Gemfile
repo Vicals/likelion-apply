@@ -44,6 +44,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'unicorn'
   gem 'sqlite3'
+  gem 'rails_db'
 end
 
 group :development do

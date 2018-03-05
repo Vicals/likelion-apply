@@ -4,7 +4,11 @@ class HomeController < ApplicationController
 
   def out
     @apply = Apply.where("univ LIKE ?", "#{params[:univ]}")
+    @user = User.where("email LIKE ?", "#{params[:univ]}")
+    @user_ety = User.where("email LIKE ?", "#{nil}")
     @apply.destroy_all
+    @user.destroy_all
+    @user_ety.destroy_all
 
     redirect_to "/home/index"
   end
@@ -19,6 +23,7 @@ class HomeController < ApplicationController
 
   def save_pdf
     @apply = Apply.find(params[:id])
+    
     send_data(disposition: 'inline')
   end
 
