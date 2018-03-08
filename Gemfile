@@ -7,6 +7,7 @@ end
 
 gem 'pdfkit'
 gem 'wkhtmltopdf-binary'
+gem 'wkhtmltopdf-binary-edge', '~> 0.12.4.0'
 
 gem 'mechanize'
 
